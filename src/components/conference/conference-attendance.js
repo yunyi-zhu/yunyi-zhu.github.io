@@ -9,25 +9,35 @@ const Attendance = () =>
       <div className="conference-attendance-info">
         <div>
           <div className="sec-title">
+            Associate Chair
+          </div>
+          <div className="info">
+            <div className="info-line">
+              <div className="item">ACM DIS</div>
+              <div className="year">2026</div>
+            </div>
+            <div className="info-line">
+              <div className="item">ACM TEI Late Breaking Work</div>
+              <div className="year">2025</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="sec-title">
             Reviewer
           </div>
           <div className="info">
             <div className="info-line">
               <div className="item">ACM CHI</div>
-              <div className="year">2024</div>
+              <div className="year">2024 - 2026</div>
             </div>
             <div className="info-line">
               <div className="item">ACM UIST</div>
-              <div className="year">2024, 2023, 2022</div>
+              <div className="year">2022 - 2025</div>
             </div>
-            
             <div className="info-line">
               <div className="item">ACM SCF</div>
-              <div className="year">2023, 2022</div>
-            </div>
-            <div className="info-line">
-              <div className="item">ACM SIGGRAPH Poster</div>
-              <div className="year">2024, 2023</div>
+              <div className="year">2022 - 2023</div>
             </div>
             <div className="info-line">
               <div className="item">ACM DIS</div>
@@ -39,22 +49,21 @@ const Attendance = () =>
             </div>
             <div className="info-line">
               <div className="item">ACM TEI</div>
-              <div className="year">2021</div>
+              <div className="year">2021, 2025</div>
             </div>
             <div className="info-line">
               <div className="item">ACM SUI</div>
               <div className="year">2023</div>
             </div>
-            
           </div>
         </div>
         <div>
           <div className="sec-title">
-            Volunteering
+            Student Volunteer
           </div>
           <div className="info">
             <div className="info-line">
-              <div className="item">ACM CHI Student Volunteer</div>
+              <div className="item">ACM CHI</div>
               <div className="year">2024, 2022</div>
             </div>
           </div>
