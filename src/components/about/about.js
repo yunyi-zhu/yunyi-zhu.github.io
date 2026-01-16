@@ -25,13 +25,12 @@ const About = () => {
       <div className="paragraph">
         PhD Candidate in the <a href="https://hcie.csail.mit.edu/" target="_blank">HCI Engineering Group</a> at the <a href="https://www.csail.mit.edu/" target="_blank">MIT Computer Science and Artificial Intelligence Lab</a>. I am advised by <a href="https://hcie.csail.mit.edu/stefanie-mueller" target="_blank">Prof. Stefanie Mueller</a>. 
 
-        I am a 2021 <a href="https://oge.mit.edu/fellowships/presidential-graduate-fellowship-program/" target="_blank">Jacobs Presidential Fellow</a>. During my PhD, I have worked at the University of Tokyo with <a href="https://narumi.me/" target="_blank">Prof. Koya Narumi</a>.  
+        I am a 2021 <a href="https://oge.mit.edu/fellowships/presidential-graduate-fellowship-program/" target="_blank">Jacobs Presidential Fellow</a>. During my PhD, I have interned at the University of Tokyo with <a href="https://narumi.me/" target="_blank">Prof. Koya Narumi</a>, and at Adobe Research with <a href="https://chang.engineer/" target="_blank">Prof. Chang Xiao</a>.  
       </div>
 
       <div className="paragraph">
-      In my research, I develop new devices and systems that interact with programmable structures and materials. For example, I use <a href="https://hcie.csail.mit.edu/research/lenticularobject/lenticular-object.html" target="_blank">lenticular structure</a> and  <a href="https://hcie.csail.mit.edu/research/portachrome/portachrome.html" target="_blank">photochromic material</a> to achieve programmable surface textures on 3D objects. 
+      My research makes appearance-changing physical objects with new materials and optical structures. For example, I develop systems for <a href="https://hcie.csail.mit.edu/research/lenticularobject/lenticular-object.html" target="_blank">lenticular structures</a> that can be 3D printed on the surface of a 3D object, and devices for <a href="https://hcie.csail.mit.edu/research/portachrome/portachrome.html" target="_blank"> photochromic material </a> to make T-shirts with reprogrammable patterns. 
       </div>
-
 
 
       {/* <div className="paragraph">
