@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.4d104964.css",
-    "main.js": "/static/js/main.2cefa005.js",
+    "main.css": "/static/css/main.b243c989.css",
+    "main.js": "/static/js/main.bbe1e89e.js",
+    "static/media/chromolcd.gif": "/static/media/chromolcd.4c4f23bbe36a2989760c.gif",
+    "static/media/lenticularobjects.gif": "/static/media/lenticularobjects.a5645fce9361d8cd2992.gif",
     "static/media/lonestar.png": "/static/media/lonestar.69a99fddd1c28791034e.png",
-    "static/media/seal-sleeping.jpg": "/static/media/seal-sleeping.66599836ae8d859d4ec2.jpg",
-    "static/media/grass1.png": "/static/media/grass1.086ef0d0b10ee0d34952.png",
+    "static/media/fibercircuits.gif": "/static/media/fibercircuits.c19172b03ebd2af8ea33.gif",
+    "static/media/portachrome.gif": "/static/media/portachrome.21479427a3f638aac04a.gif",
     "static/media/clevr.png": "/static/media/clevr.5481891d5396980030e2.png",
     "static/media/2_shoe-rack.jpg": "/static/media/2_shoe-rack.461e689ba52bc33546f5.jpg",
     "static/media/enlightenment-vest.jpg": "/static/media/enlightenment-vest.9df5803f687e4cccd8b6.jpg",
-    "static/media/pigeon1.png": "/static/media/pigeon1.153c28bbb3ab3c08ec5f.png",
-    "static/media/pigeon4.png": "/static/media/pigeon4.cb1c5c6b83099de21087.png",
     "static/media/3dprint-textile.jpg": "/static/media/3dprint-textile.3e3b166e3aa915585e94.jpg",
     "static/media/mosaic-stool.jpg": "/static/media/mosaic-stool.c6a8b3b2b07d7fe69923.jpg",
-    "static/media/spiderlily1.png": "/static/media/spiderlily1.deda665a0f9b2626192d.png",
     "static/media/enlightenment-vest-2.jpg": "/static/media/enlightenment-vest-2.83c96ff7d151b081945a.jpg",
     "static/media/shape-grammar-origami.jpg": "/static/media/shape-grammar-origami.b3de8d7b13bd08113eea.jpg",
-    "static/media/pigeon3.png": "/static/media/pigeon3.546fb42f93512f3cef87.png",
     "static/media/bus-stop.png": "/static/media/bus-stop.752da42ce530ce9835e2.png",
     "static/media/1_shoe-box.jpg": "/static/media/1_shoe-box.bef591ba10795c9a80b8.jpg",
+    "static/media/tactstyle.png": "/static/media/tactstyle.1bff304f87391a248390.png",
     "static/media/catology.png": "/static/media/catology.3c686484dab2c38c747a.png",
-    "static/media/pigeon2.png": "/static/media/pigeon2.7cff6f0a494042fd5f7b.png",
     "static/media/shaper-sketch.png": "/static/media/shaper-sketch.3d05553b23e8cd785599.png",
     "static/media/text-weather.png": "/static/media/text-weather.69e78909f0d46a8979ea.png",
     "static/media/morphsensor-thumbnail.png": "/static/media/morphsensor-thumbnail.d32dac2b4b7121b5032c.png",
@@ -28,20 +26,18 @@
     "static/media/portachrome.png": "/static/media/portachrome.b7c4b34cec7da0cbeafe.png",
     "static/media/dejavu.png": "/static/media/dejavu.293652cf7ed3030c65ad.png",
     "static/media/infraredtags-thumbnail.png": "/static/media/infraredtags-thumbnail.7fbd39d3e02a692b82ab.png",
-    "static/media/cat.png": "/static/media/cat.24596aaf758c46980f25.png",
+    "static/media/profile-mobile.jpeg": "/static/media/profile-mobile.8b6a217a3429b62451e1.jpeg",
     "static/media/profile2.jpeg": "/static/media/profile2.f573965d9496ef53f04b.jpeg",
-    "static/media/grass2.png": "/static/media/grass2.5dd3b6c1e6c51f30fd72.png",
     "static/media/lenticular-thumbnail.jpeg": "/static/media/lenticular-thumbnail.8cbf78ab7cab7206b975.jpeg",
-    "static/media/seal-up.jpg": "/static/media/seal-up.38a75a033b7eca92d510.jpg",
     "static/media/github.svg": "/static/media/github.0ec844e470fd65f8f52f608c8aa97ddb.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.7defd339fd92d3e5fa034b24a5f10ed6.svg",
     "static/media/googlescholar.svg": "/static/media/googlescholar.edcabbc918871ca78570b1c74ef97500.svg",
     "index.html": "/index.html",
-    "main.4d104964.css.map": "/static/css/main.4d104964.css.map",
-    "main.2cefa005.js.map": "/static/js/main.2cefa005.js.map"
+    "main.b243c989.css.map": "/static/css/main.b243c989.css.map",
+    "main.bbe1e89e.js.map": "/static/js/main.bbe1e89e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d104964.css",
-    "static/js/main.2cefa005.js"
+    "static/css/main.b243c989.css",
+    "static/js/main.bbe1e89e.js"
   ]
 }
