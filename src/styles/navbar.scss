@@ -4,29 +4,28 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 70%;
+  width: 100%;
   min-height: 30px;
 
   background: darkgrey;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   font-family: $titleFont;
 
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
+  padding: 10px 5%;
+  box-sizing: border-box;
 
   .navigation {
     display: flex;
-    align-items:flex-end;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
 
     .name-brand {
       min-width: 100px;
       display: inline;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       margin-right: 15px;
 
       a {
@@ -34,26 +33,23 @@ nav {
         text-decoration: none;
         display: inline;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 18px;
       }
-      
     }
 
     .menu {
       display: flex;
-      //margin: auto;
-      margin-right: 0;
+      flex-wrap: wrap;
       margin-bottom: 0;
-      align-items:flex-end;
+      align-items: flex-start;
 
       button, a {
-
-        margin-right: 15px;
+        margin-right: 12px;
+        margin-bottom: 5px;
         font-family: $titleFont;
-        font-size: 16px;
+        font-size: 14px;
         color: white;
         text-decoration: none;
-        margin-bottom: 7px;
 
         background: none;
         border: none;
@@ -61,31 +57,28 @@ nav {
         &:hover, &:focus, &:visited {
           background: none;
           border: none;
-          outline:none;
+          outline: none;
           cursor: pointer;
         }
 
         &:hover {
           color: lightgrey;
         }
-
       }
-
     }
   }
 
-
   .info {
-    margin-right: 50px;
     display: flex;
-    width: 200px;
+    width: 100%;
     height: 30px;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-top: 5px;
 
     div {
       display: inline;
       width: 20px;
-      margin: 7px 8px;
+      margin: 0 8px 0 0;
     }
 
     .linkedin {
@@ -113,6 +106,53 @@ nav {
         fill: white !important;
       }
     }
+  }
+
+  // Tablet and up
+  @media #{$tablet} {
+    flex-direction: row;
+    padding: 10px 10%;
+
+    .navigation {
+      flex-direction: row;
+      align-items: flex-end;
+      width: auto;
+
+      .name-brand {
+        margin-bottom: 5px;
+
+        a {
+          font-size: 20px;
+        }
+      }
+
+      .menu {
+        align-items: flex-end;
+
+        button, a {
+          font-size: 16px;
+          margin-right: 15px;
+          margin-bottom: 7px;
+        }
+      }
+    }
+
+    .info {
+      width: 200px;
+      justify-content: flex-end;
+      margin-top: 0;
+      margin-right: 50px;
+
+      div {
+        margin: 7px 8px;
+      }
+    }
+  }
+
+  // Laptop and up
+  @media #{$laptop} {
+    padding-left: 15%;
+    padding-right: 15%;
   }
 }
 

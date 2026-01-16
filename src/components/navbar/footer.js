@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => (
   <div className="footer">
     <div>
-      <div>2023 by Yunyi Zhu</div>
+      <div>Updated in 2026 by Yunyi Zhu</div>
     </div>
   </div>
 );

@@ -11,16 +11,21 @@
   .project-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
     .project-preview {
-      width: 300px;
-      margin: 20px 20px;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px 10px;
       font-family: $textFont;
       font-size: 14px;
 
       .thumbnail {
         img {
-          width: 300px;
-          height: 200px;
+          width: 100%;
+          height: auto;
+          aspect-ratio: 3 / 2;
+          object-fit: cover;
           border-radius: 8px;
         }
       }
@@ -44,6 +49,23 @@
 
         .description {
         }
+      }
+    }
+
+    // Tablet and up - side by side layout
+    @media #{$tablet} {
+      justify-content: flex-start;
+
+      .project-preview {
+        width: calc(50% - 40px);
+        margin: 20px 20px;
+      }
+    }
+
+    // Laptop and up - three columns
+    @media #{$laptop} {
+      .project-preview {
+        width: 300px;
       }
     }
   }

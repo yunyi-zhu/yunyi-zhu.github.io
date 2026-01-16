@@ -1,10 +1,23 @@
-import React from 'react';
-import Profile from './profile2.jpeg';
+import React, { useState, useEffect } from 'react';
+import ProfileDesktop from './profile2.jpeg';
+import ProfileMobile from './profile-mobile.jpeg';
 // import { Link } from 'react-router-dom';
 
-const About = () => (
+const About = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
   <div className="about-container">
-    <img src={Profile} alt="./profile1.jpg"/>
+    <img src={isMobile ? ProfileMobile : ProfileDesktop} alt="Yunyi Zhu"/>
     <div className="self-description-container">
       <div className="my-name">
         Yunyi Zhu
@@ -39,6 +52,7 @@ const About = () => (
 
     </div>
   </div>
-);
+  );
+};
 
 export default About;

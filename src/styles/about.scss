@@ -1,26 +1,30 @@
 .about-container {
   display: flex;
-  flex-direction: column; // Stack children vertically on mobile
+  flex-direction: column;
   color: $textColor;
-  align-items: center; // Center align for mobile
+  align-items: center;
 
   img {
-    align-self: start;
+    align-self: center;
     margin: 20px;
-    display: block; // Instead of inline-block for mobile
-    height: auto; // Adjust the height to maintain aspect ratio
-    max-width: 50%; // Set a max-width for mobile
+    margin-top: 80px;
+    display: block;
+    height: 200px;
+    width: 200px;
+    max-width: 80%;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .self-description-container {
-    width: 90%; // Take up most of the screen width on mobile
+    width: 90%;
     font-family: $textFont;
     margin: 10px;
-    font-size: 14px; // Slightly smaller font size for mobile
+    font-size: 14px;
 
     .paragraph {
       margin-top: 2px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .semibold {
@@ -29,8 +33,9 @@
 
     .my-name {
       font-family: $titleFont;
-      font-size: 24px; // Adjust for mobile
+      font-size: 22px;
       font-weight: 600;
+      margin-bottom: 10px;
     }
 
     a {
@@ -38,21 +43,36 @@
     }
   }
 
-  // Media query for larger screens (tablet)
+  // Tablet and up - side by side layout
   @media #{$tablet} {
-    flex-direction: row; // Switch back to horizontal layout
+    flex-direction: row;
+    align-items: flex-start;
 
     img {
-      margin: 40px 30px 30px 70px;
+      align-self: flex-start;
+      margin: 40px 30px 30px 40px;
       height: 300px;
+      width: auto;
+      max-width: none;
+      border-radius: 0;
+      object-fit: initial;
     }
 
     .self-description-container {
       width: 600px;
       margin: 30px 30px 10px 10px;
       font-size: 14px;
+
+      .my-name {
+        font-size: 24px;
+      }
     }
   }
 
-  // You can continue adding media queries for $laptop and $desktop if needed...
+  // Laptop and up
+  @media #{$laptop} {
+    img {
+      margin: 40px 30px 30px 70px;
+    }
+  }
 }

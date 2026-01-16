@@ -7,9 +7,9 @@ $lineColor: #a3a3a3;
 $highlightTextColor: darkorange;
 $highlightBlockColor: orange;
 
-// media
-$phone: "only screen and (min-width : 480px)";
-$tablet: "screen and (min-width : 961px)";
+// media - mobile first approach
+$phone: "only screen and (max-width : 767px)";
+$tablet: "screen and (min-width : 768px)";
 $laptop: "screen and (min-width : 1025px)";
 $desktop: "screen and (min-width : 1281px)";
 
@@ -81,30 +81,27 @@ $desktop: "screen and (min-width : 1281px)";
 }
 
 .body-part {
-  margin-left: 15%;
+  // Mobile first - start with mobile styles
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 60px;
-  margin-right: 20%;
 
-  // For phone screens
-  @media #{$phone} {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  // For tablet screens
+  // For tablet screens and up
   @media #{$tablet} {
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  // For laptop screens
+  // For laptop screens and up
   @media #{$laptop} {
-    // You can adjust the margins or leave them as they are
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   // For desktop screens
   @media #{$desktop} {
-    // You can adjust the margins or leave them as they are
+    margin-left: 15%;
+    margin-right: 20%;
   }
 }
 

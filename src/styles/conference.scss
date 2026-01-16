@@ -16,13 +16,17 @@
 
     .info-line {
       display: flex;
+      flex-direction: row;
+      margin-bottom: 4px;
 
       .item {
-        width: 600px;
+        flex: 1;
       }
 
       .year {
-        width: 500px;
+        width: auto;
+        min-width: 80px;
+        text-align: right;
       }
     }
   }
