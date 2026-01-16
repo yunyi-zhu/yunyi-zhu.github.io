@@ -1,4 +1,14 @@
-[
+[ {
+  "id": 4,
+  "courseName": "MIT GTL Bahrain: Actuated Experiences (Co-Instructor)",
+  "link": "https://mit-gtl-bahrain-2025.github.io/",
+  "term": "Winter 2025",
+  "details": [
+    "co-designed the course curriculum and assignments",
+    "built and maintained the course website",
+    "designed and led two lectures and hands-on sessions, topics including mechanical assembly and color-changing materials"
+  ]
+  },
   {
     "id": 1,
     "courseName": "6.C35: Interactive Data Visualization & Society (TA)",
