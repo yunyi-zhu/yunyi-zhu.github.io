@@ -5,6 +5,9 @@
     "authors": "<b>Yunyi Zhu</b>, Qingyuan Li, Katherine Arianna Yan, Emily Guan, Alexandru Luchianov, Eden Hen, Stefanie Mueller.",
     "conference": "Proceedings of TEI 2026. (to appear)",
     "thumbnail":"chromolcd.gif",
+    "doi": "https://doi.org/10.1145/3731459.3773308",
+    "pdf": "https://groups.csail.mit.edu/hcie/files/research-projects/chromolcd/2026-tei-chromolcd-paper.pdf",
+    "projectPage": "https://hcie.csail.mit.edu/research/chromolcd/chromolcd.html",
     "description": "ChromoLCD is a compact and high-resolution surface reprogrammer for photochromic color-changing surfaces. ChromoLCD combines a liquid crystal display (LCD) with custom backlights, and enables on-the-fly reprogramming of everyday surfaces."
   },
   {
