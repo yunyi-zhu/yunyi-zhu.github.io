@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b243c989.css",
-    "main.js": "/static/js/main.8c362893.js",
+    "main.css": "/static/css/main.531c73de.css",
+    "main.js": "/static/js/main.4ef44ed9.js",
     "static/media/chromolcd.gif": "/static/media/chromolcd.4c4f23bbe36a2989760c.gif",
     "static/media/lenticularobjects.gif": "/static/media/lenticularobjects.a5645fce9361d8cd2992.gif",
     "static/media/lonestar.png": "/static/media/lonestar.69a99fddd1c28791034e.png",
@@ -26,18 +26,20 @@
     "static/media/portachrome.png": "/static/media/portachrome.b7c4b34cec7da0cbeafe.png",
     "static/media/dejavu.png": "/static/media/dejavu.293652cf7ed3030c65ad.png",
     "static/media/infraredtags-thumbnail.png": "/static/media/infraredtags-thumbnail.7fbd39d3e02a692b82ab.png",
+    "static/media/shiftlens.png": "/static/media/shiftlens.4436995ae2301e0da291.png",
     "static/media/profile-mobile.jpeg": "/static/media/profile-mobile.8b6a217a3429b62451e1.jpeg",
     "static/media/profile2.jpeg": "/static/media/profile2.f573965d9496ef53f04b.jpeg",
     "static/media/lenticular-thumbnail.jpeg": "/static/media/lenticular-thumbnail.8cbf78ab7cab7206b975.jpeg",
+    "static/media/tangimap.png": "/static/media/tangimap.0fe549a35b72ed89b1ae.png",
     "static/media/github.svg": "/static/media/github.0ec844e470fd65f8f52f608c8aa97ddb.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.7defd339fd92d3e5fa034b24a5f10ed6.svg",
     "index.html": "/index.html",
     "static/media/googlescholar.svg": "/static/media/googlescholar.edcabbc918871ca78570b1c74ef97500.svg",
-    "main.b243c989.css.map": "/static/css/main.b243c989.css.map",
-    "main.8c362893.js.map": "/static/js/main.8c362893.js.map"
+    "main.531c73de.css.map": "/static/css/main.531c73de.css.map",
+    "main.4ef44ed9.js.map": "/static/js/main.4ef44ed9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b243c989.css",
-    "static/js/main.8c362893.js"
+    "static/css/main.531c73de.css",
+    "static/js/main.4ef44ed9.js"
   ]
 }
