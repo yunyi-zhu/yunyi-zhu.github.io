@@ -19,7 +19,20 @@
     "authors": "<b>Yunyi Zhu</b>, Chang Xiao.",
     "conference": "Proceedings of ACM UIST 2026. (to appear)",
     "thumbnail": "tangimap.png",
+    "doi": "https://doi.org/10.1145/3830398.3830602",
+    "pdf": "https://yunyi-zhu.github.io/tangimap/2026-tangimap-paper.pdf",
+    "projectPage": "https://yunyi-zhu.github.io/tangimap/",
     "description": "TangiMap bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware controls such as knobs and sliders. TangiMap analyzes the user's context, the available widgets, and the target software, and uses large language models (LLMs) to assign suitable functions to each control."
+  },
+  {
+    "id": 12,
+    "featured": true,
+    "title": "MorphoChrome: Interactive, Handheld Fabrication of Programmable Structural Color.",
+    "authors": "Paris G Myers, <b>Yunyi Zhu</b>, Maxine Perroni-Scharf, Ticha Sethapakdi, Benjamin Harvey Miller, Stefanie Mueller.",
+    "conference": "Proceedings of ACM UIST 2026. (to appear)",
+    "thumbnail": "morphochrome.jpg",
+    "doi": "https://doi.org/10.1145/3830398.3830608",
+    "description": "MorphoChrome is a handheld device for fabricating programmable structural color. By exposing holographic photopolymer film to user-controlled wavelengths and angles of RGB laser light, MorphoChrome inscribes the nanostructures that produce iridescent, view-dependent color. A digital twin interface provides a live iridescent preview, and a UV-resin adhesion process applies the film to 2D and 3D objects, from PLA to fabric."
   },
   {
     "id": 11,
