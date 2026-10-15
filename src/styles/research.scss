@@ -28,6 +28,18 @@ $desktop: "screen and (min-width : 1281px)";
         width: 100%; // full width on mobile
         max-width: 200px; // constrain to max of 200px
       }
+
+      .thumbnail-placeholder {
+        width: 200px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ececec;
+        border-radius: 4px;
+        color: #999999;
+        font-family: $titleFont;
+      }
     }
 
     .descriptions {
@@ -95,5 +107,42 @@ $desktop: "screen and (min-width : 1281px)";
     }
 
     // Add further adjustments for $laptop and $desktop if needed...
+  }
+
+  // compact layout for the Additional Publications section
+  .additional-publications {
+    .publication_preview {
+      font-size: 13px;
+
+      .thumbnail {
+        margin-top: 15px;
+
+        img {
+          max-width: 130px;
+        }
+      }
+
+      .descriptions {
+        .description {
+          margin-top: 8px;
+        }
+
+        .links {
+          margin-top: 8px;
+        }
+      }
+
+      @media #{$tablet} {
+        .thumbnail {
+          img {
+            width: 130px;
+          }
+        }
+
+        .descriptions {
+          margin: 5px 10px 10px 30px;
+        }
+      }
+    }
   }
 }

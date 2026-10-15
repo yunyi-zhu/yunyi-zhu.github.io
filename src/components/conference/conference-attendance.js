@@ -9,9 +9,28 @@ const Attendance = () =>
       <div className="conference-attendance-info">
         <div>
           <div className="sec-title">
+            Chairing
+          </div>
+          <div className="info">
+            <div className="info-line">
+              <div className="item">ACM SCF Demo Co-chair</div>
+              <div className="year">2026</div>
+            </div>
+            <div className="info-line">
+              <div className="item">ACM TEI Publicity Co-chair</div>
+              <div className="year">2027</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="sec-title">
             Associate Chair
           </div>
           <div className="info">
+            <div className="info-line">
+              <div className="item">ACM CHI</div>
+              <div className="year">2026</div>
+            </div>
             <div className="info-line">
               <div className="item">ACM DIS</div>
               <div className="year">2026</div>
