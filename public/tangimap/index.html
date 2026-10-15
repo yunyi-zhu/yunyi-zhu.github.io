@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>TangiMap: Context-Aware Generative Function Mapping for Tangible Input Devices</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="TangiMap uses large language models to dynamically map software functions onto the knobs, sliders, and buttons of tangible input devices. UIST 2026." />
 	<link rel="icon" href="../favicon.ico" />
 
@@ -14,413 +14,538 @@
 	<meta property="og:url" content="https://yunyi-zhu.github.io/tangimap/" />
 	<meta property="og:type" content="website" />
 
+	<!-- Bootstrap and HCIE project page styles (local copies) -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/custom-style.css" rel="stylesheet">
+
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 
 	<style>
-		* {
-			box-sizing: border-box;
+		.center {
+			text-align: center;
 		}
 
-		body {
-			margin: 0;
-			background: #ffffff;
-			color: #333333;
-			font-family: 'Open Sans', sans-serif;
-			font-size: 14px;
-			line-height: 1.6;
-		}
-
-		a, a:visited {
-			color: #333333;
-			text-decoration: none;
-			border-bottom: 1px dotted #a3a3a3;
-		}
-
-		a:hover {
-			color: darkorange;
-		}
-
-		.top-bar {
-			padding: 16px 24px;
-			border-bottom: 1px solid lightgrey;
-			font-family: 'Lato', sans-serif;
-			font-size: 18px;
-		}
-
-		.top-bar a {
-			border-bottom: none;
-		}
-
-		.container {
-			display: flex;
-			gap: 40px;
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 40px 24px;
-		}
-
-		.sidebar {
-			flex: 0 0 360px;
-		}
-
-		.content {
-			flex: 1;
-			min-width: 0;
-		}
-
-		.headline {
-			margin: 0 0 24px;
-			font-family: 'Lato', sans-serif;
-			font-size: 28px;
-			font-weight: 400;
-			line-height: 1.3;
-		}
-
-		.medium-headline {
-			margin: 32px 0 12px;
-			font-family: 'Lato', sans-serif;
-			font-size: 20px;
-			font-weight: 400;
-		}
-
-		h3.medium-headline {
-			margin-top: 24px;
-			font-size: 17px;
-			font-weight: 700;
-		}
-
-		.sidebar .medium-headline {
-			display: block;
-			margin-top: 0;
-		}
-
-		.publication {
-			margin-bottom: 24px;
-		}
-
-		.btn {
-			display: inline-block;
-			margin: 0 10px 10px 0;
-			padding: 4px 14px;
-			border: none;
-			border-radius: 4px;
-			color: #ffffff;
-			font-family: 'Lato', sans-serif;
-			font-weight: 700;
-		}
-
-		.btn:visited {
-			color: #ffffff;
-		}
-
-		.btn:hover {
-			color: #ffffff;
-			opacity: 0.85;
-		}
-
-		.btn-doi {
-			background: #e95a44;
-		}
-
-		.btn-pdf {
-			background: #4a90c2;
-		}
-
-		.btn-vdo {
-			background: #5aa05a;
-		}
-
-		img {
+		.col-md-8 img {
 			max-width: 100%;
 			height: auto;
 		}
 
-		.figure {
-			margin: 24px 0;
-			text-align: center;
+		/* Header and footer from yunyi-zhu.github.io */
+		nav.site-nav {
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 1000;
+			width: 100%;
+			min-height: 30px;
+			background: darkgrey;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			font-family: 'Lato', sans-serif;
+			padding: 10px 5%;
 		}
 
-		.caption {
-			margin-top: 8px;
-			font-size: 12px;
+		nav.site-nav a,
+		nav.site-nav a:visited {
+			border-bottom: none;
+			color: white;
+			text-decoration: none;
+		}
+
+		nav.site-nav a:hover {
+			color: lightgrey;
+		}
+
+		nav.site-nav .navigation {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		nav.site-nav .name-brand {
+			min-width: 100px;
+			margin-bottom: 8px;
+			margin-right: 15px;
+		}
+
+		nav.site-nav .name-brand a {
 			font-weight: 600;
-			text-align: left;
+			font-size: 18px;
 		}
 
-		.footer {
-			padding: 24px;
-			border-top: 1px solid lightgrey;
-			font-size: 12px;
-			text-align: center;
+		nav.site-nav .menu {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
 		}
 
-		@media only screen and (max-width: 900px) {
-			.container {
-				flex-direction: column;
-				gap: 0;
-				padding: 24px 16px;
+		nav.site-nav .menu a {
+			margin-right: 12px;
+			margin-bottom: 5px;
+			font-size: 14px;
+		}
+
+		nav.site-nav .info {
+			display: flex;
+			width: 100%;
+			height: 30px;
+			justify-content: flex-start;
+			margin-top: 5px;
+		}
+
+		nav.site-nav .info div {
+			width: 20px;
+			margin: 0 8px 0 0;
+		}
+
+		nav.site-nav .info .googlescholar {
+			width: 28px;
+		}
+
+		nav.site-nav .info svg {
+			display: block;
+			width: 100%;
+			height: auto;
+			fill: white;
+		}
+
+		.site-footer {
+			display: flex;
+			padding: 20px;
+			background: lightgrey;
+			margin-top: 40px;
+			font-family: 'Lato', sans-serif;
+			font-size: 14px;
+			color: white;
+		}
+
+		.site-footer div {
+			margin: 6px auto;
+		}
+
+		.page-body {
+			padding-top: 130px;
+		}
+
+		@media screen and (min-width: 768px) {
+			nav.site-nav {
+				flex-direction: row;
+				padding: 10px 10%;
 			}
 
-			.sidebar {
-				flex: none;
-				margin-bottom: 24px;
+			nav.site-nav .navigation {
+				flex-direction: row;
+				align-items: flex-end;
+				width: auto;
+			}
+
+			nav.site-nav .name-brand {
+				margin-bottom: 5px;
+			}
+
+			nav.site-nav .name-brand a {
+				font-size: 20px;
+			}
+
+			nav.site-nav .menu {
+				align-items: flex-end;
+			}
+
+			nav.site-nav .menu a {
+				font-size: 16px;
+				margin-right: 15px;
+				margin-bottom: 7px;
+			}
+
+			nav.site-nav .info {
+				width: 200px;
+				justify-content: flex-end;
+				margin-top: 0;
+				margin-right: 50px;
+			}
+
+			nav.site-nav .info div {
+				margin: 7px 8px;
+			}
+
+			.page-body {
+				padding-top: 100px;
+			}
+		}
+
+		@media screen and (min-width: 1025px) {
+			nav.site-nav {
+				padding-left: 15%;
+				padding-right: 15%;
 			}
 		}
 	</style>
 </head>
 
 <body>
-<div class="top-bar">
-	<a href="../">Yunyi Zhu</a>
-</div>
-
-<div class="container">
-	<!-- Publication details -->
-	<div class="sidebar">
-		<div class="publication">
-			<span class="medium-headline">Publication</span>
-			Yunyi Zhu, Chang Xiao.
-			<br>
-			TangiMap: Context-Aware Generative Function Mapping for Tangible Input Devices
-			<br>
-			In Proceedings of
-			<a href="https://uist.acm.org/2026/" target="_blank">UIST &#8217;26</a>.
+<nav class="site-nav">
+	<div class="navigation">
+		<div class="name-brand">
+			<a href="../">Yunyi Zhu</a>
 		</div>
-
-		<a href="https://doi.org/10.1145/3830398.3830602" class="btn btn-doi" target="_blank">DOI</a>
-		<a href="2026-tangimap-paper.pdf" class="btn btn-pdf" target="_blank">PDF</a>
-		<!--
-		<a href="" class="btn btn-vdo" target="_blank">Video</a>
-		-->
-
-		<!--
-		<span class="medium-headline">Video</span>
-		<iframe width="360" height="203" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		-->
+		<div class="menu">
+			<a href="../?scroll=publications">Publications</a>
+			<a href="../?scroll=awards">Awards</a>
+			<a href="../?scroll=teaching">Teaching</a>
+			<a href="../yunyizhu-cv.pdf" target="_blank">CV</a>
+		</div>
 	</div>
+	<div class="info">
+		<div class="googlescholar">
+			<a href="https://scholar.google.com/citations?user=tExDwdkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+				<svg viewBox="0 0 512 512" role="img"><path d="M213 111l-107 94h69c5 45 41 64 78 67-7 18-4 27 7 39-43 1-103 26-103 67 4 45 63 54 92 54 38 1 81-19 90-54 4-35-10-54-31-71-23-18-28-28-21-40 15-17 35-27 39-51 2-17-2-28-6-43l45-38-1 16c-3 2-5 6-5 9v103c2 13 22 11 23 0V160c0-3-2-7-5-8v-25l16-16zm58 141c-61 10-87-87-38-99 56-11 83 86 38 99zm-5 73c60 13 61 63 10 78-44 9-82-4-81-30 0-25 35-48 71-48z"/></svg>
+			</a>
+		</div>
+		<div class="github">
+			<a href="https://github.com/yunyi-zhu" target="_blank" aria-label="GitHub">
+				<svg viewBox="0 0 438.549 438.549" role="img"><path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906C438.536,184.851,428.728,148.168,409.132,114.573z"/></svg>
+			</a>
+		</div>
+		<div class="linkedin">
+			<a href="https://www.linkedin.com/in/yunyizhu97/" target="_blank" aria-label="LinkedIn">
+				<svg viewBox="0 0 382 382" role="img"><path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472L341.91,330.654L341.91,330.654z"/></svg>
+			</a>
+		</div>
+	</div>
+</nav>
+
+<div class="container page-body">
+	<div class="row">
+	<!-- Publication details -->
+	<div class="col-md-4" style="text-align: left;">
+		<br>
+		<br>
+		<span class="medium-headline">
+		Publication
+		</span>
+		<br>
+		<br>
+		Yunyi Zhu, Chang Xiao.
+		<br>
+		TangiMap: Context-Aware Generative Function Mapping for Tangible Input Devices
+		<br>
+		In Proceedings of
+		<a href="https://uist.acm.org/2026/" target="_blank">UIST &#8217;26</a>.<br>
+		<br>
+
+		<a href="https://doi.org/10.1145/3830398.3830602" class="btn btn-doi" alt="doi" target="_blank">DOI</a>
+		&nbsp; &nbsp;
+
+		<a href="2026-tangimap-paper.pdf" class="btn btn-pdf" alt="pdf" target="_blank">PDF</a>
+		&nbsp; &nbsp;
+
+		<!--
+		<a href="" class="btn btn-vdo" alt="video" target="_blank">Video</a>
+		&nbsp; &nbsp;
+		-->
+		<br>
+		<br>
+
+		<!--
+		<span class="medium-headline">
+		Video
+		</span>
+		<br><br>
+		<iframe width="360" height="203" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<br>
+		<br>
+		-->
+
+		<!--
+		<span class="medium-headline">
+		Press
+		</span>
+		<br><br>
+		<ul>
+		</ul>
+		<br>
+		-->
+
+	</div>
+
 
 	<!-- Project information -->
-	<div class="content">
-		<h1 class="headline">
-			TangiMap: Context-Aware Generative Function Mapping for Tangible Input Devices
-		</h1>
+	<div class="col-md-8" style="text-align: left;">
+		<br>
+	  <h3 class="headline">
+		TangiMap: Context-Aware Generative Function Mapping for Tangible Input Devices
+		</h3><br>
 
-		<div class="figure">
-			<img src="images/fig1.jpg" alt="TangiMap teaser figure" />
-			<p class="caption">
+	<div>
+	  <div>
+	    <div>
+	      <p>
+	      	<img src="images/fig1.jpg" width="720" alt="TangiMap teaser figure"/>
+	      </p>
+		      <p style="font-size: 12px; font-weight: 600">
 				Figure 1: TangiMap bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware widgets. The system includes context from multiple sources: user intent, user environment, software parameters, and device configuration. These contexts are serialized into a structured representation and processed by an LLM together with mapping guidelines and examples to generate dynamic mappings. Functions are then assigned and executed on available tangible widgets, enabling real-time, context-aware interaction.
-			</p>
-		</div>
+		      </p>
+		      <br>
 
-		<p>
-			While tangible input devices with physical controls such as knobs and sliders enable efficient interaction, they often lack the flexibility to adapt to dynamic contexts, limiting their use to predefined applications with fixed functionalities. In this paper, we introduce TangiMap, a proof-of-concept system that bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware controls.
-		</p>
-		<p>
-			To achieve this, TangiMap analyzes the user&rsquo;s declared hardware specifications, the available controls, and the target software context, and uses large language models (LLMs) to assign suitable functions to each control element. To support diverse contexts, TangiMap presents multiple strategies such as API queries and screen parsing.
-		</p>
-		<p>
-			We demonstrate the system through four scenarios: interactive adjustment of natural language parameters in 3D modeling, live music performance, task-aware mapping of on-screen controls in image editing, and dynamic puppeteering in animation.
-		</p>
+	        <p>
+	        	While tangible input devices with physical controls such as knobs and sliders enable efficient interaction, they often lack the flexibility to adapt to dynamic contexts, limiting their use to predefined applications with fixed functionalities. In this paper, we introduce TangiMap, a proof-of-concept system that bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware controls.
+	        </p>
+	        <p>
+	        	To achieve this, TangiMap analyzes the user&rsquo;s declared hardware specifications, the available controls, and the target software context, and uses large language models (LLMs) to assign suitable functions to each control element. To support diverse contexts, TangiMap presents multiple strategies such as API queries and screen parsing.
+	        </p>
+	        <p>
+	        	We demonstrate the system through four scenarios: interactive adjustment of natural language parameters in 3D modeling, live music performance, task-aware mapping of on-screen controls in image editing, and dynamic puppeteering in animation.
+	        </p>
 
-		<h2 class="medium-headline">INTRODUCTION</h2>
-		<p>
-			From early hand tools to today&rsquo;s complex mechanical panels, people have built devices that respond to the hand with tangible feedback, enabling efficient and precise work. In the digital era, this tangible interaction remains indispensable: a keyboard enables eyes-free, rapid text entry; an editing console supports intuitive, simultaneous parameter changes for digital design; and a game controller affords quick, embodied reactions in fast-paced play. Extensive research on tangible interfaces has demonstrated that physical controls such as dials, knobs, sliders, and buttons enable efficient, precise, and often simultaneous manipulation of parameters, leading to measurable performance benefits and higher user preference compared to purely graphical user interfaces.
-		</p>
-		<p>
-			Despite these advantages, tangible interfaces face a fundamental limitation: their functionality is fixed to the hardware form and must be explicitly mapped to software functions. A slider may adjust brightness in a photo editor or volume in a music mixer, but such mappings are typically predefined or manually assigned by the user. This rigidity is acceptable in stable contexts such as gaming, where mappings rarely change, but in complex software environments with multiple modes and evolving workflows, reusing the same physical controls across contexts demands constant remapping. This manual overhead is tedious, and it is also impractical to rely on universal presets across all scenarios, since users often own different types and configurations of tangible devices.
-		</p>
-		<p>
-			Moreover, recent advances in large language models have renewed interest in natural language interfaces (NLIs), which allow users to specify tasks in free-form language. Such interfaces support fluid expression of intent but struggle to provide precise, fine-grained, and interactive parameter control. This gap has motivated the emergence of ephemeral UIs, which are lightweight, temporary controls that appear on demand. Yet such fast-changing, dynamic scenarios are particularly challenging for tangible input, whose physical rigidity resists the flexibility required by these new interaction paradigms.
-		</p>
-		<p>
-			These observations raise a central research question: <strong>can we make tangible interfaces as dynamic and adaptive as software widgets, automatically assigning appropriate functions to physical controls based on the user&rsquo;s current context?</strong> To address this, we present TangiMap, a proof-of-concept system that bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware widgets, the individual physical input controls on a tangible device, such as knobs, sliders, and buttons.
-		</p>
-		<p>In summary, we contribute:</p>
-		<ul>
-			<li><strong>an end-to-end pipeline</strong> for dynamically mapping software functionalities onto tangible input devices;</li>
-			<li><strong>a method for serializing</strong> diverse software and device environments into natural language contexts; and</li>
-			<li><strong>four application scenarios</strong> that demonstrate the potential of TangiMap across different uses, software support, and device types.</li>
-		</ul>
+	    <div>
+	      <h1 class="medium-headline">INTRODUCTION</h1>
 
-		<h2 class="medium-headline">SYSTEM STRUCTURE</h2>
-		<p>
-			TangiMap dynamically maps software functionalities to tangible input widgets in a context-aware manner. The pipeline begins with an event, either initiated by the user or triggered by a change in context. To generate task-appropriate mappings, TangiMap integrates context from three sources: (i) the <strong>user</strong>, including explicit input, supporting context, or inferred intent; (ii) the <strong>software</strong>, including functions and tunable parameters obtained through APIs, plugins, or screen parsing; and (iii) the <strong>device</strong>, including widget types, counts, and control.
-		</p>
+	      <p>
+	      	From early hand tools to today&rsquo;s complex mechanical panels, people have built devices that respond to the hand with tangible feedback, enabling efficient and precise work. In the digital era, this tangible interaction remains indispensable: a keyboard enables eyes-free, rapid text entry; an editing console supports intuitive, simultaneous parameter changes for digital design; and a game controller affords quick, embodied reactions in fast-paced play. Extensive research on tangible interfaces has demonstrated that physical controls such as dials, knobs, sliders, and buttons enable efficient, precise, and often simultaneous manipulation of parameters, leading to measurable performance benefits and higher user preference compared to purely graphical user interfaces.
+	      </p>
 
-		<div class="figure">
-			<img src="images/fig2.jpg" alt="The TangiMap pipeline" />
-			<p class="caption">
-				Figure 2: The TangiMap pipeline. The system begins with an event and gathers context from the user, software, and device, using methods suited to the specific environment. This context is serialized into a representation of the task, environment, parameters, and available widgets. An LLM-controlled mapping agent then selects relevant parameters, assigns them to widget types, and binds them to specific controls on the device.
-			</p>
-		</div>
+	      <p>
+	      	Despite these advantages, tangible interfaces face a fundamental limitation: their functionality is fixed to the hardware form and must be explicitly mapped to software functions. A slider may adjust brightness in a photo editor or volume in a music mixer, but such mappings are typically predefined or manually assigned by the user. This rigidity is acceptable in stable contexts such as gaming, where mappings rarely change, but in complex software environments with multiple modes and evolving workflows, reusing the same physical controls across contexts demands constant remapping. This manual overhead is tedious, and it is also impractical to rely on universal presets across all scenarios, since users often own different types and configurations of tangible devices.
+	      </p>
 
-		<p>
-			The collected context is serialized into a structured description of the current task, relevant parameters, and available widgets. An LLM-controlled mapping agent consumes this description, together with mapping guidelines and examples, to generate a widget-function mapping that respects four design considerations:
-		</p>
-		<ul>
-			<li><strong>User Context (D1):</strong> software typically encompasses more functionality than hardware can support, so TangiMap identifies which functions are relevant to the user&rsquo;s current task and intent.</li>
-			<li><strong>Software and Device Context (D2):</strong> TangiMap needs to know what parameters the software exposes, how to control them, and how to detect widget interactions on the connected device.</li>
-			<li><strong>Widget Compatibility (D3):</strong> different widget types suit different parameter types, so TangiMap matches each function to the most appropriate control (button, knob, slider, etc.).</li>
-			<li><strong>Mapping Consistency (D4):</strong> generic input devices require users to relearn mappings each time they change, so TangiMap preserves consistency over time to reduce this cognitive overhead.</li>
-		</ul>
-		<p>
-			Because TangiMap operates across different applications and hardware, we separate application-agnostic components (mapping guidelines, context processing, and mapping policy) from application-specific components (user context collection, and software and device context collection).
-		</p>
+	      <p>
+	      	Moreover, recent advances in large language models have renewed interest in natural language interfaces (NLIs), which allow users to specify tasks in free-form language. Such interfaces support fluid expression of intent but struggle to provide precise, fine-grained, and interactive parameter control. This gap has motivated the emergence of ephemeral UIs, which are lightweight, temporary controls that appear on demand. Yet such fast-changing, dynamic scenarios are particularly challenging for tangible input, whose physical rigidity resists the flexibility required by these new interaction paradigms.
+	      </p>
 
-		<h3 class="medium-headline">User Context (D1)</h3>
-		<p>
-			User context extraction is inherently application-specific, as it depends on how much information the application exposes and the level of intention the user reveals. TangiMap employs three complementary ways of extracting and serializing user context:
-		</p>
-		<ul>
-			<li><strong>Active user intent input:</strong> when the user explicitly states their task, for example in a natural language interface, the stated task is incorporated directly so the system can prioritize the most relevant functions.</li>
-			<li><strong>Passive user context:</strong> some applications provide APIs or tool calls that expose the currently selected object, the active window, and a history of recent events, which are serialized into descriptive inputs.</li>
-			<li><strong>Inferred user context:</strong> when applications expose no APIs, TangiMap uses a vision-language model (VLM) to parse the current application state, including the active window, the cursor-focused element, and on-screen widgets such as sliders and buttons together with their labels.</li>
-		</ul>
+	      <p>
+	      	These observations raise a central research question: <strong>can we make tangible interfaces as dynamic and adaptive as software widgets, automatically assigning appropriate functions to physical controls based on the user&rsquo;s current context?</strong> To address this, we present TangiMap, a proof-of-concept system that bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware widgets, the individual physical input controls on a tangible device, such as knobs, sliders, and buttons.
+	      </p>
 
-		<h3 class="medium-headline">Software and Device Context (D2)</h3>
-		<p>
-			<strong>Software context</strong> consists of the available parameters and their corresponding control functions. Inspired by Model Context Protocol (MCP) tool calls, it is expressed as a JSON file that lists parameters together with their descriptions, types, ranges, and control functions. When an application provides a formal API, TangiMap queries internal functions and parameters directly. If only plugins or extensions are available, TangiMap uses them to capture the subset of parameters they expose. In the absence of both, the system falls back on screen parsing to identify control opportunities such as hotkeys.
-		</p>
-		<p>
-			<strong>Device context</strong> consists of the type and count of available widgets, and the control pathways that connect these widgets to software functions. Widget types and counts can be specified manually or extracted automatically by capturing an image of the device and processing it with a VLM. To ensure consistency across devices, TangiMap represents all controls using the MIDI protocol. For native MIDI devices, the MIDI input is used directly, and for non-MIDI devices, we use or write a plugin that generates MIDI output on a virtual channel.
-		</p>
+	      <p>In summary, we contribute:
+	      <ul>
+	        <li>
+	        	<strong>an end-to-end pipeline</strong> for dynamically mapping software functionalities onto tangible input devices;
+	        </li>
+	        <li>
+	        	<strong>a method for serializing</strong> diverse software and device environments into natural language contexts; and
+	        </li>
+	        <li>
+	        	<strong>four application scenarios</strong> that demonstrate the potential of TangiMap across different uses, software support, and device types.
+	        </li>
+	      </ul>
+	  		</p>
+	    </div>
 
-		<h3 class="medium-headline">Widget Compatibility (D3)</h3>
-		<p>
-			To guide the system in generating appropriate mappings, TangiMap incorporates application-agnostic guidelines and concrete examples. The guidelines capture heuristics about which widget types are best suited for different parameter categories: continuous parameters without defined bounds are better suited to dials, parameters with limited ranges such as brightness are better suited to sliders, and discrete actions such as toggles or mode switches are more appropriate for buttons. The guidelines were generated with an LLM and then reviewed and refined by the authors for consistency with established interaction design practices.
-		</p>
+	    <div>
+	    	<h1 class="medium-headline">SYSTEM STRUCTURE</h1>
+	    	<p>
+	    		TangiMap dynamically maps software functionalities to tangible input widgets in a context-aware manner. The pipeline begins with an event, either initiated by the user or triggered by a change in context. To generate task-appropriate mappings, TangiMap integrates context from three sources: (i) the <strong>user</strong>, including explicit input, supporting context, or inferred intent; (ii) the <strong>software</strong>, including functions and tunable parameters obtained through APIs, plugins, or screen parsing; and (iii) the <strong>device</strong>, including widget types, counts, and control.
+	    	</p>
 
-		<h3 class="medium-headline">Mapping and Execution (D3, D4)</h3>
-		<p>
-			The LLM-controlled widget mapping system integrates the encoded contexts to generate mappings between software functions and tangible widgets, then binds those functions to specific device controls, transforming the device into a functional controller for the target application.
-		</p>
+			<div class="center">
+				<img src="images/fig2.jpg" width="720" alt="The TangiMap pipeline"/>
+				<br>
+				<p style="font-size: 12px; font-weight: 600; text-align: left;"><br>
+					Figure 2: The TangiMap pipeline. The system begins with an event and gathers context from the user, software, and device, using methods suited to the specific environment. This context is serialized into a representation of the task, environment, parameters, and available widgets. An LLM-controlled mapping agent then selects relevant parameters, assigns them to widget types, and binds them to specific controls on the device.
+			  </p>
+			  <br>
+		  </div>
 
-		<div class="figure">
-			<img src="images/fig3.png" alt="The LLM-controlled widget mapping process" />
-			<p class="caption">
-				Figure 3: The LLM-controlled widget mapping process. User, software, and device contexts are combined with mapping guidelines and examples to generate a list of relevant parameters and their corresponding widget types. The system then includes mapping history to assign parameters to specific widgets. Finally, it performs a control lookup to bind software functions to device controls, producing the final executable control mapping.
-			</p>
-		</div>
+	    	<p>
+	    		The collected context is serialized into a structured description of the current task, relevant parameters, and available widgets. An LLM-controlled mapping agent consumes this description, together with mapping guidelines and examples, to generate a widget-function mapping that respects four design considerations:
+	    	</p>
+	    	<ul>
+	    		<li><strong>User Context (D1):</strong> software typically encompasses more functionality than hardware can support, so TangiMap identifies which functions are relevant to the user&rsquo;s current task and intent.</li>
+	    		<li><strong>Software and Device Context (D2):</strong> TangiMap needs to know what parameters the software exposes, how to control them, and how to detect widget interactions on the connected device.</li>
+	    		<li><strong>Widget Compatibility (D3):</strong> different widget types suit different parameter types, so TangiMap matches each function to the most appropriate control (button, knob, slider, etc.).</li>
+	    		<li><strong>Mapping Consistency (D4):</strong> generic input devices require users to relearn mappings each time they change, so TangiMap preserves consistency over time to reduce this cognitive overhead.</li>
+	    	</ul>
+	    	<p>
+	    		Because TangiMap operates across different applications and hardware, we separate application-agnostic components (mapping guidelines, context processing, and mapping policy) from application-specific components (user context collection, and software and device context collection).
+	    	</p>
 
-		<p>
-			<strong>Widget Type Mapping:</strong> TangiMap uses a single structured prompt with a role directive followed by four context sections: user context, software context, device context, and design guidelines. The system performs single-pass inference with an LLM (Gemini 2.5 Flash) to select the parameters relevant to the user&rsquo;s current task and map them to widget types. The output is structured JSON where each entry specifies a software function, its assigned widget type, and a priority score (1-10). Per-type widget counts are stated in the prompt so the LLM does not exceed device capacity.
-		</p>
-		<p>
-			<strong>Conflict Resolution:</strong> in rare cases where more functions of a type are proposed than the device has widgets of that type, candidates are sorted by priority and only the top-ranked ones are retained.
-		</p>
-		<p>
-			<strong>Widget Assignment:</strong> each remaining function is assigned to a specific widget, consulting the user&rsquo;s mapping history first so that a function mapped before reuses the same widget (D4). In cases of overlap, the more frequently mapped function keeps the widget, and the other falls back to the next unassigned widget of its type.
-		</p>
-		<p>
-			<strong>Control Lookup:</strong> finally, the system looks up the software function for each parameter and the MIDI channel and control change (CC) number for each widget, resolved via a per-device profile recorded once at setup. It then listens on that channel and executes the mapped function whenever the widget is used, closing the loop between tangible input and software control.
-		</p>
+	    	<h3 class="medium-headline">User Context (D1)</h3>
+	    	<p>
+	    		User context extraction is inherently application-specific, as it depends on how much information the application exposes and the level of intention the user reveals. TangiMap employs three complementary ways of extracting and serializing user context:
+	    	</p>
+	    	<p>
+	    		<strong>Active user intent input:</strong> when the user explicitly states their task, for example in a natural language interface, the stated task is incorporated directly so the system can prioritize the most relevant functions.
+	    	</p>
+	    	<p>
+	    		<strong>Passive user context:</strong> some applications provide APIs or tool calls that expose the currently selected object, the active window, and a history of recent events, which are serialized into descriptive inputs.
+	    	</p>
+	    	<p>
+	    		<strong>Inferred user context:</strong> when applications expose no APIs, TangiMap uses a vision-language model (VLM) to parse the current application state, including the active window, the cursor-focused element, and on-screen widgets such as sliders and buttons together with their labels.
+	    	</p>
 
-		<h2 class="medium-headline">TECHNICAL EVALUATION</h2>
-		<p>
-			We evaluated whether TangiMap&rsquo;s widget-type assignments align with human-authored reference configurations. We collected 16 reference configurations from real-world device profiles and publicly available preset libraries, spanning 8 fixed-layout and 8 configurable-layout devices and 305 controls in total. The set covers knobs, dials, faders, buttons, pads, encoders, switches, jog wheels, and trackballs, across color grading panels, MIDI and DJ controllers, modular editing consoles, and game controllers, targeting software from Ableton Live and Rekordbox to Lightroom, Photoshop, and Spotify.
-		</p>
-		<p>
-			For each configuration, we provided TangiMap with the device&rsquo;s control inventory and the software context, and measured the <strong>reference alignment rate</strong>: the proportion of function-widget pairs in which the predicted widget type matches the human-authored reference. Across all 16 configurations, TangiMap achieved an aggregate alignment rate of <strong>99.1%</strong>, with 15 of the 16 configurations reaching 100%. The only misalignment came from the TourBox with Clip Studio Paint, where TangiMap mapped &ldquo;switch between previous and current colors&rdquo; to a button and &ldquo;clear selection&rdquo; to a knob, while the reference did the opposite.
-		</p>
+	    	<h3 class="medium-headline">Software and Device Context (D2)</h3>
+	    	<p>
+	    		<strong>Software context</strong> consists of the available parameters and their corresponding control functions. Inspired by Model Context Protocol (MCP) tool calls, it is expressed as a JSON file that lists parameters together with their descriptions, types, ranges, and control functions. When an application provides a formal API, TangiMap queries internal functions and parameters directly. If only plugins or extensions are available, TangiMap uses them to capture the subset of parameters they expose. In the absence of both, the system falls back on screen parsing to identify control opportunities such as hotkeys.
+	    	</p>
+	    	<p>
+	    		<strong>Device context</strong> consists of the type and count of available widgets, and the control pathways that connect these widgets to software functions. Widget types and counts can be specified manually or extracted automatically by capturing an image of the device and processing it with a VLM. To ensure consistency across devices, TangiMap represents all controls using the MIDI protocol. For native MIDI devices, the MIDI input is used directly, and for non-MIDI devices, we use or write a plugin that generates MIDI output on a virtual channel.
+	    	</p>
 
-		<h2 class="medium-headline">APPLICATIONS</h2>
-		<p>
-			We demonstrate how TangiMap supports creative workflows through four scenarios. Each scenario exercises a distinct interaction mode and varies in both the software and device context.
-		</p>
+	    	<h3 class="medium-headline">Widget Compatibility (D3)</h3>
+	    	<p>
+	    		To guide the system in generating appropriate mappings, TangiMap incorporates application-agnostic guidelines and concrete examples. The guidelines capture heuristics about which widget types are best suited for different parameter categories: continuous parameters without defined bounds are better suited to dials, parameters with limited ranges such as brightness are better suited to sliders, and discrete actions such as toggles or mode switches are more appropriate for buttons. The guidelines were generated with an LLM and then reviewed and refined by the authors for consistency with established interaction design practices.
+	    	</p>
 
-		<h3 class="medium-headline">Interactive Adjustment of NLI-Generated Parameters</h3>
-		<p>
-			One way to help users express goals more precisely in natural language interfaces is to present ephemeral, custom-generated UIs for adjusting the parameters of a command. Because these interfaces are created on the fly, no existing system can map them to tangible input devices. TangiMap addresses this gap, which we demonstrate with natural language 3D modeling in Blender.
-		</p>
-		<p>
-			The user enters a command such as &ldquo;create a shiny blue cube with bevel.&rdquo; The user context includes the prompt, the Blender commands it generates, and the current scene state. TangiMap identifies relevant parameters from the tools exposed through Blender&rsquo;s MCP plugin and the Blender Python API, and assigns them to the widgets of a <a href="https://monogramcc.com/" target="_blank">Monogram Creative Console</a> in MIDI mode. The mapping is shown through a visualization of the device layout with generated labels; for example, a knob adjusts &ldquo;bevel size&rdquo; and a slider controls &ldquo;shininess.&rdquo;
-		</p>
+	    	<h3 class="medium-headline">Mapping and Execution (D3, D4)</h3>
+	    	<p>
+	    		The LLM-controlled widget mapping system integrates the encoded contexts to generate mappings between software functions and tangible widgets, then binds those functions to specific device controls, transforming the device into a functional controller for the target application.
+	    	</p>
 
-		<div class="figure">
-			<img src="images/fig4.jpg" alt="Interactive adjustment of parameters generated from natural language input in Blender" />
-			<p class="caption">
-				Figure 4: TangiMap enables interactive adjustment of parameters generated from natural language input. (a) The user performs 3D modeling in Blender using natural language input, &ldquo;create a shiny blue cube with bevel&rdquo;. (b) TangiMap collects user and software contexts through the user&rsquo;s input and the Blender API. (c) Relevant parameters are selected and mapped onto the tangible device. (d) The user adjusts these parameters, such as &ldquo;bevel size&rdquo; and &ldquo;shininess&rdquo;, by turning knobs and moving sliders.
-			</p>
-		</div>
+			<div class="center">
+				<img src="images/fig3.png" width="720" alt="The LLM-controlled widget mapping process"/>
+				<br>
+				<p style="font-size: 12px; font-weight: 600; text-align: left;"><br>
+					Figure 3: The LLM-controlled widget mapping process. User, software, and device contexts are combined with mapping guidelines and examples to generate a list of relevant parameters and their corresponding widget types. The system then includes mapping history to assign parameters to specific widgets. Finally, it performs a control lookup to bind software functions to device controls, producing the final executable control mapping.
+			  </p>
+			  <br>
+		  </div>
 
-		<h3 class="medium-headline">Live Performance in Computer Music</h3>
-		<p>
-			Performers depend on physical controls for eyes-free, real-time manipulation, but dedicated hardware such as professional DJ systems is expensive and tied to a fixed layout and application. We demonstrate this scenario on a custom computer music application written with an AI coding agent, driven by an affordable, general-purpose Akai MIDIMix. The application has two playback decks, a two-channel mixer with three-band EQs and filters, beat-synchronized effects, a sampler, and a track library, exposing over 100 controllable functions through a control registry. By reading that registry directly, TangiMap produces the application&rsquo;s first hardware mapping.
-		</p>
-		<p>
-			User context is collected as the log of recent control actions, from which TangiMap infers the performer&rsquo;s current workflow phase, such as browsing the library, preparing the set, or executing a mix transition. The inferred phase filters the registry down to its most relevant functions, while both decks&rsquo; tempo faders are kept in every phase so beatmatching is always available. Remapping requires a manual button press, so the mapping never changes unprompted mid-performance and the performer stays in control of when the hardware reconfigures.
-		</p>
+	    	<p>
+	    		<strong>Widget Type Mapping:</strong> TangiMap uses a single structured prompt with a role directive followed by four context sections: user context, software context, device context, and design guidelines. The system performs single-pass inference with an LLM (Gemini 2.5 Flash) to select the parameters relevant to the user&rsquo;s current task and map them to widget types. The output is structured JSON where each entry specifies a software function, its assigned widget type, and a priority score (1-10). Per-type widget counts are stated in the prompt so the LLM does not exceed device capacity.
+	    	</p>
+	    	<p>
+	    		<strong>Conflict Resolution:</strong> in rare cases where more functions of a type are proposed than the device has widgets of that type, candidates are sorted by priority and only the top-ranked ones are retained.
+	    	</p>
+	    	<p>
+	    		<strong>Widget Assignment:</strong> each remaining function is assigned to a specific widget, consulting the user&rsquo;s mapping history first so that a function mapped before reuses the same widget (D4). In cases of overlap, the more frequently mapped function keeps the widget, and the other falls back to the next unassigned widget of its type.
+	    	</p>
+	    	<p>
+	    		<strong>Control Lookup:</strong> finally, the system looks up the software function for each parameter and the MIDI channel and control change (CC) number for each widget, resolved via a per-device profile recorded once at setup. It then listens on that channel and executes the mapped function whenever the widget is used, closing the loop between tangible input and software control.
+	    	</p>
+	    </div>
 
-		<h3 class="medium-headline">Repurposing the Same Mixer for Color Grading</h3>
-		<p>
-			Color grading places the same demands on tangible control as audio mixing: continuous parameters, adjusted simultaneously, with the eyes on the image rather than on the controls. Dedicated consoles such as the <a href="https://loupedeck.com/us/products/loupedeck-plus/" target="_blank">Loupedeck+</a> or the <a href="https://www.blackmagicdesign.com/products/davinciresolve/panels" target="_blank">DaVinci Resolve Color Panel</a> serve this need but are typically single-purpose with fixed mappings. TangiMap instead repurposes the same MIDIMix for Adobe Lightroom, for which no preset exists.
-		</p>
-		<p>
-			TangiMap parses the Lightroom interface with a VLM (Gemini 2.5 Flash) to identify the active window, panel, and visible controls, such as hue, saturation, and luminance for eight color channels. Lightroom functions are accessed via the MIDI2LR plugin, with a custom MIDI remapper redirecting the mixer&rsquo;s inputs to the channels of the active parameters. As the user scrolls or switches tools, the mappings adapt; for example, when the crop window is active, the knobs are remapped to parameters such as rotation angle.
-		</p>
+	    <div>
+	    	<h1 class="medium-headline">TECHNICAL EVALUATION</h1>
+	    	<p>
+	    		We evaluated whether TangiMap&rsquo;s widget-type assignments align with human-authored reference configurations. We collected 16 reference configurations from real-world device profiles and publicly available preset libraries, spanning 8 fixed-layout and 8 configurable-layout devices and 305 controls in total. The set covers knobs, dials, faders, buttons, pads, encoders, switches, jog wheels, and trackballs, across color grading panels, MIDI and DJ controllers, modular editing consoles, and game controllers, targeting software from Ableton Live and Rekordbox to Lightroom, Photoshop, and Spotify.
+	    	</p>
+	    	<p>
+	    		For each configuration, we provided TangiMap with the device&rsquo;s control inventory and the software context, and measured the <strong>reference alignment rate</strong>: the proportion of function-widget pairs in which the predicted widget type matches the human-authored reference. Across all 16 configurations, TangiMap achieved an aggregate alignment rate of <strong>99.1%</strong>, with 15 of the 16 configurations reaching 100%. The only misalignment came from the TourBox with Clip Studio Paint, where TangiMap mapped &ldquo;switch between previous and current colors&rdquo; to a button and &ldquo;clear selection&rdquo; to a knob, while the reference did the opposite.
+	    	</p>
+	    </div>
 
-		<div class="figure">
-			<img src="images/fig5.jpg" alt="The same Akai MIDIMix mapped to a music application and to Adobe Lightroom" />
-			<p class="caption">
-				Figure 5: TangiMap maps the same generic mixer (Akai MIDIMix) onto two different applications. (a) The performer works in a custom-written computer music performance application. (b) TangiMap reads software and user context directly from the application&rsquo;s locally exposed API and control-action log. (c) The generated mapping is visualized on the device layout. (d) The performer adjusts the tempo of each deck on the mixer. (e) The same mixer then serves color grading in Adobe Lightroom, where the user adjusts highlights and shadows. (f) The Lightroom software context is captured through the MIDI2LR plugin and user context through screen parsing.
-			</p>
-		</div>
+	    <div>
+	    	<h1 class="medium-headline">APPLICATIONS</h1>
+	    	<p>
+	    		We demonstrate how TangiMap supports creative workflows through four scenarios. Each scenario exercises a distinct interaction mode and varies in both the software and device context.
+	    	</p>
 
-		<h3 class="medium-headline">Puppeteering for Animation</h3>
-		<p>
-			Puppeteering refers to the live control of characters or objects, supporting both real-time performance and the rapid creation of animated sequences. It typically requires external input devices with one-to-one mappings between controls and actions, which often take manual configuration to set up. TangiMap streamlines this by automatically mapping available animation triggers onto a tangible device in a single step, demonstrated with Adobe Character Animator and the <a href="https://www.elgato.com/us/en/p/stream-deck-plus" target="_blank">Elgato Stream Deck+</a>.
-		</p>
-		<p>
-			Because Character Animator does not provide an SDK, TangiMap captures both user and software context through screen parsing with a VLM, extracting text labels and action icons for the triggers available to the active character. A custom Stream Deck plugin updates each button&rsquo;s icon to show its trigger image and remaps its MIDI output to match, so the user can act out character actions and expressions in real time.
-		</p>
+	    	<h3 class="medium-headline">Interactive Adjustment of NLI-Generated Parameters</h3>
+	    	<p>
+	    		One way to help users express goals more precisely in natural language interfaces is to present ephemeral, custom-generated UIs for adjusting the parameters of a command. Because these interfaces are created on the fly, no existing system can map them to tangible input devices. TangiMap addresses this gap, which we demonstrate with natural language 3D modeling in Blender.
+	    	</p>
+	    	<p>
+	    		The user enters a command such as &ldquo;create a shiny blue cube with bevel.&rdquo; The user context includes the prompt, the Blender commands it generates, and the current scene state. TangiMap identifies relevant parameters from the tools exposed through Blender&rsquo;s MCP plugin and the Blender Python API, and assigns them to the widgets of a <a href="https://monogramcc.com/" target="_blank">Monogram Creative Console</a> in MIDI mode. The mapping is shown through a visualization of the device layout with generated labels; for example, a knob adjusts &ldquo;bevel size&rdquo; and a slider controls &ldquo;shininess.&rdquo;
+	    	</p>
 
-		<div class="figure">
-			<img src="images/fig6.jpg" alt="Puppeteering in Adobe Character Animator with an Elgato Stream Deck+" />
-			<p class="caption">
-				Figure 6: TangiMap enables automatically setting up a puppeteering system for animation in Adobe Character Animator. (a) The Adobe Character Animator interface with triggers and parameter sliders. (b) User and software contexts are captured through screen parsing with a VLM, extracting text and icons from the interface. (c) The triggers are mapped onto the Elgato Stream Deck+, with a custom TangiMap plugin updating button icons to display the corresponding trigger images. (d) The user can interact with the device to act out the animation in real time.
-			</p>
-		</div>
+			<div class="center">
+				<img src="images/fig4.jpg" width="720" alt="Interactive adjustment of parameters generated from natural language input in Blender"/>
+				<br>
+				<p style="font-size: 12px; font-weight: 600; text-align: left;"><br>
+					Figure 4: TangiMap enables interactive adjustment of parameters generated from natural language input. (a) The user performs 3D modeling in Blender using natural language input, &ldquo;create a shiny blue cube with bevel&rdquo;. (b) TangiMap collects user and software contexts through the user&rsquo;s input and the Blender API. (c) Relevant parameters are selected and mapped onto the tangible device. (d) The user adjusts these parameters, such as &ldquo;bevel size&rdquo; and &ldquo;shininess&rdquo;, by turning knobs and moving sliders.
+			  </p>
+			  <br>
+		  </div>
 
-		<h2 class="medium-headline">DISCUSSION, LIMITATIONS, AND FUTURE WORK</h2>
-		<p>
-			<strong>Dynamic vs. Fixed Mappings:</strong> on-the-fly remapping can undercut the eyes-free, embodied benefits of tangible controls by requiring users to relearn the interface. We see dynamic mapping as suited to software with large or uniquely generated parameter spaces, where no fixed preset can anticipate which functions will be relevant, as in our 3D modeling example. Fixed mappings remain preferable for workflows that depend on muscle memory, such as instrument-style playing in live music. The two are not mutually exclusive, and in future work we plan to let users pin individual controls while others remap, or freeze a generated mapping as a fixed preset.
-		</p>
-		<p>
-			<strong>Spatial Layout:</strong> TangiMap focuses on widget type mapping, and addresses spatial layout only through mapping consistency. We plan to incorporate broader layout considerations, such as grouping widgets into logical clusters and distributing them ergonomically across the device.
-		</p>
-		<p>
-			<strong>User Preference and Manual Override:</strong> the current implementation prioritizes mappings based on usage frequency. We plan to support more explicit preference input, such as loading a preference configuration, manually adjusting mappings for the system to learn from, and rolling back to an earlier configuration.
-		</p>
-		<p>
-			<strong>Widget Visualization:</strong> TangiMap sometimes relies on an on-screen overlay to communicate mappings, requiring users to shift attention between the screen and the device. Configurable devices such as the Stream Deck+ show how labels can be displayed directly on the widgets themselves.
-		</p>
-		<p>
-			<strong>Hardware Constraints:</strong> TangiMap can only repurpose the widgets available on a given device, and knobs, sliders, and buttons cover only part of the input space. In the future, we plan to support modular or reconfigurable hardware and extend the device guidelines so that such affordances can be expressed in the prompt.
-		</p>
-		<p>
-			<strong>Application Access:</strong> our applications span a full local API, an MCP plugin, a fixed-channel plugin, and no programmatic access at all, where we fall back on screen parsing. Screen parsing works but must be tuned per application, and as tool interfaces such as MCP become standard, that fallback should keep narrowing.
-		</p>
+	    	<h3 class="medium-headline">Live Performance in Computer Music</h3>
+	    	<p>
+	    		Performers depend on physical controls for eyes-free, real-time manipulation, but dedicated hardware such as professional DJ systems is expensive and tied to a fixed layout and application. We demonstrate this scenario on a custom computer music application written with an AI coding agent, driven by an affordable, general-purpose Akai MIDIMix. The application has two playback decks, a two-channel mixer with three-band EQs and filters, beat-synchronized effects, a sampler, and a track library, exposing over 100 controllable functions through a control registry. By reading that registry directly, TangiMap produces the application&rsquo;s first hardware mapping.
+	    	</p>
+	    	<p>
+	    		User context is collected as the log of recent control actions, from which TangiMap infers the performer&rsquo;s current workflow phase, such as browsing the library, preparing the set, or executing a mix transition. The inferred phase filters the registry down to its most relevant functions, while both decks&rsquo; tempo faders are kept in every phase so beatmatching is always available. Remapping requires a manual button press, so the mapping never changes unprompted mid-performance and the performer stays in control of when the hardware reconfigures.
+	    	</p>
 
-		<h3 class="medium-headline">Toward Screen-Free Interaction</h3>
-		<p>
-			Across our applications the LLM is engaged in two ways: explicitly, when the user states an intent as in 3D modeling, and implicitly, when intent is inferred from the interface or performance state. Both directions lead away from the screen. Explicit use could move to voice, while implicit use could draw on ambient sensing, such as a camera watching the physical workspace. The output side can leave the screen as well, as in sound production where the audio itself is the output, or through shape-changing interfaces and other dynamic objects. Together these describe a loop in which context arrives without a screen, control happens in the hand, and the result is heard or felt rather than displayed.
-		</p>
+	    	<h3 class="medium-headline">Repurposing the Same Mixer for Color Grading</h3>
+	    	<p>
+	    		Color grading places the same demands on tangible control as audio mixing: continuous parameters, adjusted simultaneously, with the eyes on the image rather than on the controls. Dedicated consoles such as the <a href="https://loupedeck.com/us/products/loupedeck-plus/" target="_blank">Loupedeck+</a> or the <a href="https://www.blackmagicdesign.com/products/davinciresolve/panels" target="_blank">DaVinci Resolve Color Panel</a> serve this need but are typically single-purpose with fixed mappings. TangiMap instead repurposes the same MIDIMix for Adobe Lightroom, for which no preset exists.
+	    	</p>
+	    	<p>
+	    		TangiMap parses the Lightroom interface with a VLM (Gemini 2.5 Flash) to identify the active window, panel, and visible controls, such as hue, saturation, and luminance for eight color channels. Lightroom functions are accessed via the MIDI2LR plugin, with a custom MIDI remapper redirecting the mixer&rsquo;s inputs to the channels of the active parameters. As the user scrolls or switches tools, the mappings adapt; for example, when the crop window is active, the knobs are remapped to parameters such as rotation angle.
+	    	</p>
 
-		<h2 class="medium-headline">CONCLUSION</h2>
-		<p>
-			We presented TangiMap, a proof-of-concept system that leverages large language models to dynamically map software functionalities onto tangible widgets by analyzing user, software, and device contexts. Through four application scenarios in 3D modeling with natural language interfaces, live music performance, image editing with simultaneous parameter adjustments, and animation puppeteering, we demonstrated how TangiMap enables flexible, context-aware use of existing tangible devices across different types of software and hardware. This first exploration highlights the potential of combining tangible interfaces with adaptive mapping to move beyond single-purpose workflows and toward more versatile interactions with tangible input devices.
-		</p>
+			<div class="center">
+				<img src="images/fig5.jpg" width="720" alt="The same Akai MIDIMix mapped to a music application and to Adobe Lightroom"/>
+				<br>
+				<p style="font-size: 12px; font-weight: 600; text-align: left;"><br>
+					Figure 5: TangiMap maps the same generic mixer (Akai MIDIMix) onto two different applications. (a) The performer works in a custom-written computer music performance application. (b) TangiMap reads software and user context directly from the application&rsquo;s locally exposed API and control-action log. (c) The generated mapping is visualized on the device layout. (d) The performer adjusts the tempo of each deck on the mixer. (e) The same mixer then serves color grading in Adobe Lightroom, where the user adjusts highlights and shadows. (f) The Lightroom software context is captured through the MIDI2LR plugin and user context through screen parsing.
+			  </p>
+			  <br>
+		  </div>
 
-		<h2 class="medium-headline">ACKNOWLEDGEMENTS</h2>
-		<p>
-			This work was supported in part by a Gemini Academic Program Award. The initial work was conducted while Yunyi Zhu was an intern and Chang Xiao was a Research Scientist at Adobe Research. We thank Mike Berry, Michael Vangen, Eric Sanders, Dacia Saenz, Dave Werner, Eunyee Koh, and Alex Nikiforov for their early feedback on the project, and Alex in particular for lending us the Monogram Creative Console.
-		</p>
+	    	<h3 class="medium-headline">Puppeteering for Animation</h3>
+	    	<p>
+	    		Puppeteering refers to the live control of characters or objects, supporting both real-time performance and the rapid creation of animated sequences. It typically requires external input devices with one-to-one mappings between controls and actions, which often take manual configuration to set up. TangiMap streamlines this by automatically mapping available animation triggers onto a tangible device in a single step, demonstrated with Adobe Character Animator and the <a href="https://www.elgato.com/us/en/p/stream-deck-plus" target="_blank">Elgato Stream Deck+</a>.
+	    	</p>
+	    	<p>
+	    		Because Character Animator does not provide an SDK, TangiMap captures both user and software context through screen parsing with a VLM, extracting text labels and action icons for the triggers available to the active character. A custom Stream Deck plugin updates each button&rsquo;s icon to show its trigger image and remaps its MIDI output to match, so the user can act out character actions and expressions in real time.
+	    	</p>
+
+			<div class="center">
+				<img src="images/fig6.jpg" width="720" alt="Puppeteering in Adobe Character Animator with an Elgato Stream Deck+"/>
+				<br>
+				<p style="font-size: 12px; font-weight: 600; text-align: left;"><br>
+					Figure 6: TangiMap enables automatically setting up a puppeteering system for animation in Adobe Character Animator. (a) The Adobe Character Animator interface with triggers and parameter sliders. (b) User and software contexts are captured through screen parsing with a VLM, extracting text and icons from the interface. (c) The triggers are mapped onto the Elgato Stream Deck+, with a custom TangiMap plugin updating button icons to display the corresponding trigger images. (d) The user can interact with the device to act out the animation in real time.
+			  </p>
+			  <br>
+		  </div>
+	    </div>
+
+	    <div>
+	    	<h1 class="medium-headline">DISCUSSION, LIMITATIONS, AND FUTURE WORK</h1>
+	    	<p>
+	    		<strong>Dynamic vs. Fixed Mappings:</strong> on-the-fly remapping can undercut the eyes-free, embodied benefits of tangible controls by requiring users to relearn the interface. We see dynamic mapping as suited to software with large or uniquely generated parameter spaces, where no fixed preset can anticipate which functions will be relevant, as in our 3D modeling example. Fixed mappings remain preferable for workflows that depend on muscle memory, such as instrument-style playing in live music. The two are not mutually exclusive, and in future work we plan to let users pin individual controls while others remap, or freeze a generated mapping as a fixed preset.
+	    	</p>
+	    	<p>
+	    		<strong>Spatial Layout:</strong> TangiMap focuses on widget type mapping, and addresses spatial layout only through mapping consistency. We plan to incorporate broader layout considerations, such as grouping widgets into logical clusters and distributing them ergonomically across the device.
+	    	</p>
+	    	<p>
+	    		<strong>User Preference and Manual Override:</strong> the current implementation prioritizes mappings based on usage frequency. We plan to support more explicit preference input, such as loading a preference configuration, manually adjusting mappings for the system to learn from, and rolling back to an earlier configuration.
+	    	</p>
+	    	<p>
+	    		<strong>Widget Visualization:</strong> TangiMap sometimes relies on an on-screen overlay to communicate mappings, requiring users to shift attention between the screen and the device. Configurable devices such as the Stream Deck+ show how labels can be displayed directly on the widgets themselves.
+	    	</p>
+	    	<p>
+	    		<strong>Hardware Constraints:</strong> TangiMap can only repurpose the widgets available on a given device, and knobs, sliders, and buttons cover only part of the input space. In the future, we plan to support modular or reconfigurable hardware and extend the device guidelines so that such affordances can be expressed in the prompt.
+	    	</p>
+	    	<p>
+	    		<strong>Application Access:</strong> our applications span a full local API, an MCP plugin, a fixed-channel plugin, and no programmatic access at all, where we fall back on screen parsing. Screen parsing works but must be tuned per application, and as tool interfaces such as MCP become standard, that fallback should keep narrowing.
+	    	</p>
+
+	    	<h3 class="medium-headline">Toward Screen-Free Interaction</h3>
+	    	<p>
+	    		Across our applications the LLM is engaged in two ways: explicitly, when the user states an intent as in 3D modeling, and implicitly, when intent is inferred from the interface or performance state. Both directions lead away from the screen. Explicit use could move to voice, while implicit use could draw on ambient sensing, such as a camera watching the physical workspace. The output side can leave the screen as well, as in sound production where the audio itself is the output, or through shape-changing interfaces and other dynamic objects. Together these describe a loop in which context arrives without a screen, control happens in the hand, and the result is heard or felt rather than displayed.
+	    	</p>
+	    </div>
+
+	    <div>
+	    	<h1 class="medium-headline">CONCLUSION</h1>
+	    	<p>
+	    		We presented TangiMap, a proof-of-concept system that leverages large language models to dynamically map software functionalities onto tangible widgets by analyzing user, software, and device contexts. Through four application scenarios in 3D modeling with natural language interfaces, live music performance, image editing with simultaneous parameter adjustments, and animation puppeteering, we demonstrated how TangiMap enables flexible, context-aware use of existing tangible devices across different types of software and hardware. This first exploration highlights the potential of combining tangible interfaces with adaptive mapping to move beyond single-purpose workflows and toward more versatile interactions with tangible input devices.
+	    	</p>
+	    </div>
+
+	    <div>
+	    	<h1 class="medium-headline">ACKNOWLEDGEMENTS</h1>
+	    	<p>
+	    		This work was supported in part by a Gemini Academic Program Award. The initial work was conducted while Yunyi Zhu was an intern and Chang Xiao was a Research Scientist at Adobe Research. We thank Mike Berry, Michael Vangen, Eric Sanders, Dacia Saenz, Dave Werner, Eunyee Koh, and Alex Nikiforov for their early feedback on the project, and Alex in particular for lending us the Monogram Creative Console.
+	    	</p>
+	    </div>
+
+	  </div>
+	</div>
+	</div>
+	</div>
 	</div>
 </div>
 
-<div class="footer">
-	&copy; Yunyi Zhu &middot; <a href="../">Back to home page</a>
+<div class="site-footer">
+	<div>Updated in 2026 by Yunyi Zhu</div>
 </div>
+
 </body>
 </html>
