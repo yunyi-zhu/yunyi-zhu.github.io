@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.531c73de.css",
-    "main.js": "/static/js/main.4ef44ed9.js",
+    "main.css": "/static/css/main.25114551.css",
+    "main.js": "/static/js/main.4bd806c2.js",
     "static/media/chromolcd.gif": "/static/media/chromolcd.4c4f23bbe36a2989760c.gif",
     "static/media/lenticularobjects.gif": "/static/media/lenticularobjects.a5645fce9361d8cd2992.gif",
     "static/media/lonestar.png": "/static/media/lonestar.69a99fddd1c28791034e.png",
@@ -19,6 +19,7 @@
     "static/media/tactstyle.png": "/static/media/tactstyle.1bff304f87391a248390.png",
     "static/media/catology.png": "/static/media/catology.3c686484dab2c38c747a.png",
     "static/media/shaper-sketch.png": "/static/media/shaper-sketch.3d05553b23e8cd785599.png",
+    "static/media/hpc.png": "/static/media/hpc.d2bfba2b73b4ba04f6e3.png",
     "static/media/text-weather.png": "/static/media/text-weather.69e78909f0d46a8979ea.png",
     "static/media/morphsensor-thumbnail.png": "/static/media/morphsensor-thumbnail.d32dac2b4b7121b5032c.png",
     "static/media/curveboard-thumbnail.jpg": "/static/media/curveboard-thumbnail.e98c89ddb0f40df713a1.jpg",
@@ -35,11 +36,11 @@
     "static/media/linkedin.svg": "/static/media/linkedin.7defd339fd92d3e5fa034b24a5f10ed6.svg",
     "index.html": "/index.html",
     "static/media/googlescholar.svg": "/static/media/googlescholar.edcabbc918871ca78570b1c74ef97500.svg",
-    "main.531c73de.css.map": "/static/css/main.531c73de.css.map",
-    "main.4ef44ed9.js.map": "/static/js/main.4ef44ed9.js.map"
+    "main.25114551.css.map": "/static/css/main.25114551.css.map",
+    "main.4bd806c2.js.map": "/static/js/main.4bd806c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.531c73de.css",
-    "static/js/main.4ef44ed9.js"
+    "static/css/main.25114551.css",
+    "static/js/main.4bd806c2.js"
   ]
 }
