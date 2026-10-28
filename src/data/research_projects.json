@@ -9,6 +9,7 @@
     "doi": "https://doi.org/10.1145/3830398.3830555",
     "pdf": "https://hcie.csail.mit.edu/research/shiftlens/2026-shiftlens-paper.pdf",
     "video": "https://www.youtube.com/watch?v=KJK-DvgmRNs",
+    "code": "https://hcie.csail.mit.edu/shiftlens/",
     "projectPage": "https://hcie.csail.mit.edu/research/shiftlens/shiftlens.html",
     "description": "ShiftLens combines a lenticular lens layer with a patterned backplane to create an optomechanical surface that changes appearance through small, controlled shifts between the two layers. ShiftLens enables dynamic visual output on 3D objects without electronics, supports pressing, sliding, and rotating interactions, and comes with a computational design tool for fabrication via 3D printing."
   },
@@ -21,6 +22,7 @@
     "thumbnail": "tangimap.png",
     "doi": "https://doi.org/10.1145/3830398.3830602",
     "pdf": "https://yunyi-zhu.github.io/tangimap/2026-tangimap-paper.pdf",
+    "video": "https://www.youtube.com/watch?v=6Kxmog1cA0Y",
     "projectPage": "https://yunyi-zhu.github.io/tangimap/",
     "description": "TangiMap bridges tangible input devices with dynamic software contexts by generating adaptive function mappings for hardware controls such as knobs and sliders. TangiMap analyzes the user's context, the available widgets, and the target software, and uses large language models (LLMs) to assign suitable functions to each control."
   },
