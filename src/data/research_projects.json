@@ -34,6 +34,8 @@
     "conference": "Proceedings of ACM UIST 2026. (to appear)",
     "thumbnail": "morphochrome.jpg",
     "doi": "https://doi.org/10.1145/3830398.3830608",
+    "video": "https://www.youtube.com/watch?v=NOz1a2gQRg0",
+    "projectPage": "https://hcie.csail.mit.edu/research/morphochrome/morphochrome.html",
     "description": "MorphoChrome is a handheld device for fabricating programmable structural color. By exposing holographic photopolymer film to user-controlled wavelengths and angles of RGB laser light, MorphoChrome inscribes the nanostructures that produce iridescent, view-dependent color. A digital twin interface provides a live iridescent preview, and a UV-resin adhesion process applies the film to 2D and 3D objects, from PLA to fabric."
   },
   {
