@@ -184,6 +184,107 @@
 				padding-right: 15%;
 			}
 		}
+
+		/* Slides lightbox (from hcie.csail.mit.edu/css/lightbox.css) */
+		.lb-modal {
+			display: none;
+			position: fixed;
+			z-index: 1001;
+			padding-top: 120px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(255,255,255,0.5);
+		}
+
+		.modal-content {
+			position: relative;
+			background-color: #fefefe;
+			margin: auto;
+			padding: 0;
+			width: 80%;
+			max-width: 1000px;
+		}
+
+		.close-button {
+			cursor: pointer;
+			position: absolute;
+			top: 7%;
+			right: 0;
+			width: auto;
+			padding: 16px;
+			margin-top: -50px;
+			color: grey;
+			font-weight: bold;
+			font-size: 40px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+
+		.close-button:hover,
+		.close-button:focus {
+			background-color: rgba(0, 0, 0, 0.8);
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.lb-slides {
+			display: none;
+		}
+
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -50px;
+			color: white;
+			font-weight: bold;
+			font-size: 40px;
+			transition: 0.6s ease;
+			user-select: none;
+			-webkit-user-select: none;
+			text-decoration: none;
+		}
+
+		.prev {
+			left: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+			text-decoration: none;
+		}
+
+		.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		}
+
+		img.hover-shadow {
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.hover-shadow:hover {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
 	</style>
 </head>
 
@@ -246,6 +347,9 @@
 
 		<a href="https://www.youtube.com/watch?v=6Kxmog1cA0Y" class="btn btn-vdo" alt="video" target="_blank">Video</a>
 		&nbsp; &nbsp;
+
+		<a href="2026-uist-tangimap-slides.pdf" class="btn btn-talk" alt="slide" target="_blank">Slides</a>
+		&nbsp; &nbsp;
 		<br>
 		<br>
 
@@ -269,6 +373,300 @@
 		<br>
 		-->
 
+		<span class="medium-headline">
+		Slides
+		</span>
+		<br>
+		<br>
+		<img src="slides/180p/uist-26-tangimap-001.jpg" alt="TangiMap Slide 1" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(1)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-002.jpg" alt="TangiMap Slide 2" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(2)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-003.jpg" alt="TangiMap Slide 3" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(3)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-004.jpg" alt="TangiMap Slide 4" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(4)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-005.jpg" alt="TangiMap Slide 5" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(5)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-006.jpg" alt="TangiMap Slide 6" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(6)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-007.jpg" alt="TangiMap Slide 7" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(7)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-008.jpg" alt="TangiMap Slide 8" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(8)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-009.jpg" alt="TangiMap Slide 9" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(9)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-010.jpg" alt="TangiMap Slide 10" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(10)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-011.jpg" alt="TangiMap Slide 11" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(11)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-012.jpg" alt="TangiMap Slide 12" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(12)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-013.jpg" alt="TangiMap Slide 13" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(13)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-014.jpg" alt="TangiMap Slide 14" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(14)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-015.jpg" alt="TangiMap Slide 15" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(15)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-016.jpg" alt="TangiMap Slide 16" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(16)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-017.jpg" alt="TangiMap Slide 17" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(17)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-018.jpg" alt="TangiMap Slide 18" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(18)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-019.jpg" alt="TangiMap Slide 19" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(19)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-020.jpg" alt="TangiMap Slide 20" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(20)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-021.jpg" alt="TangiMap Slide 21" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(21)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-022.jpg" alt="TangiMap Slide 22" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(22)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-023.jpg" alt="TangiMap Slide 23" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(23)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-024.jpg" alt="TangiMap Slide 24" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(24)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-025.jpg" alt="TangiMap Slide 25" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(25)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-026.jpg" alt="TangiMap Slide 26" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(26)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-027.jpg" alt="TangiMap Slide 27" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(27)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-028.jpg" alt="TangiMap Slide 28" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(28)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-029.jpg" alt="TangiMap Slide 29" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(29)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-030.jpg" alt="TangiMap Slide 30" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(30)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-031.jpg" alt="TangiMap Slide 31" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(31)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-032.jpg" alt="TangiMap Slide 32" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(32)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-033.jpg" alt="TangiMap Slide 33" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(33)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-034.jpg" alt="TangiMap Slide 34" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(34)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-035.jpg" alt="TangiMap Slide 35" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(35)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-036.jpg" alt="TangiMap Slide 36" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(36)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-037.jpg" alt="TangiMap Slide 37" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(37)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-038.jpg" alt="TangiMap Slide 38" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(38)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-039.jpg" alt="TangiMap Slide 39" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(39)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-040.jpg" alt="TangiMap Slide 40" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(40)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-041.jpg" alt="TangiMap Slide 41" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(41)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-042.jpg" alt="TangiMap Slide 42" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(42)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-043.jpg" alt="TangiMap Slide 43" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(43)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-044.jpg" alt="TangiMap Slide 44" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(44)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-045.jpg" alt="TangiMap Slide 45" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(45)" class="hover-shadow"/>
+		<img src="slides/180p/uist-26-tangimap-046.jpg" alt="TangiMap Slide 46" width="100px" loading="lazy" style="padding-bottom:0px; margin-bottom:10px" onclick="openModal();currentSlide(46)" class="hover-shadow"/>
+		<br>
+		<br>
+
+	</div>
+
+	<!-- Slides lightbox -->
+	<div id="lightbox-modal" class="lb-modal">
+		<div class="modal-content">
+		<div class="lb-slides">
+			<div class="numbertext">1 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-001.jpg" alt="TangiMap Slide 1" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">2 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-002.jpg" alt="TangiMap Slide 2" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">3 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-003.jpg" alt="TangiMap Slide 3" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">4 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-004.jpg" alt="TangiMap Slide 4" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">5 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-005.jpg" alt="TangiMap Slide 5" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">6 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-006.jpg" alt="TangiMap Slide 6" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">7 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-007.jpg" alt="TangiMap Slide 7" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">8 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-008.jpg" alt="TangiMap Slide 8" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">9 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-009.jpg" alt="TangiMap Slide 9" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">10 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-010.jpg" alt="TangiMap Slide 10" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">11 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-011.jpg" alt="TangiMap Slide 11" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">12 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-012.jpg" alt="TangiMap Slide 12" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">13 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-013.jpg" alt="TangiMap Slide 13" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">14 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-014.jpg" alt="TangiMap Slide 14" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">15 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-015.jpg" alt="TangiMap Slide 15" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">16 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-016.jpg" alt="TangiMap Slide 16" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">17 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-017.jpg" alt="TangiMap Slide 17" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">18 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-018.jpg" alt="TangiMap Slide 18" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">19 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-019.jpg" alt="TangiMap Slide 19" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">20 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-020.jpg" alt="TangiMap Slide 20" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">21 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-021.jpg" alt="TangiMap Slide 21" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">22 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-022.jpg" alt="TangiMap Slide 22" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">23 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-023.jpg" alt="TangiMap Slide 23" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">24 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-024.jpg" alt="TangiMap Slide 24" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">25 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-025.jpg" alt="TangiMap Slide 25" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">26 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-026.jpg" alt="TangiMap Slide 26" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">27 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-027.jpg" alt="TangiMap Slide 27" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">28 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-028.jpg" alt="TangiMap Slide 28" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">29 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-029.jpg" alt="TangiMap Slide 29" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">30 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-030.jpg" alt="TangiMap Slide 30" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">31 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-031.jpg" alt="TangiMap Slide 31" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">32 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-032.jpg" alt="TangiMap Slide 32" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">33 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-033.jpg" alt="TangiMap Slide 33" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">34 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-034.jpg" alt="TangiMap Slide 34" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">35 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-035.jpg" alt="TangiMap Slide 35" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">36 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-036.jpg" alt="TangiMap Slide 36" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">37 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-037.jpg" alt="TangiMap Slide 37" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">38 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-038.jpg" alt="TangiMap Slide 38" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">39 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-039.jpg" alt="TangiMap Slide 39" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">40 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-040.jpg" alt="TangiMap Slide 40" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">41 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-041.jpg" alt="TangiMap Slide 41" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">42 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-042.jpg" alt="TangiMap Slide 42" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">43 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-043.jpg" alt="TangiMap Slide 43" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">44 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-044.jpg" alt="TangiMap Slide 44" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">45 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-045.jpg" alt="TangiMap Slide 45" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+		<div class="lb-slides">
+			<div class="numbertext">46 / 46</div>
+			<img src="slides/720p/uist-26-tangimap-046.jpg" alt="TangiMap Slide 46" loading="lazy" style="padding-bottom:0px; margin-bottom:10px; width:100%">
+		</div>
+
+			<!-- Next/previous controls -->
+			<a class="close-button" onclick="closeModal()">&times;</a>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
 	</div>
 
 
@@ -544,6 +942,48 @@
 <div class="site-footer">
 	<div>Updated in 2026 by Yunyi Zhu</div>
 </div>
+
+<script>
+	// Slides lightbox (adapted from hcie.csail.mit.edu/js/lightbox.js)
+	var slideIndex = 1;
+
+	function openModal() {
+		document.getElementById('lightbox-modal').style.display = "block";
+	}
+
+	function closeModal() {
+		document.getElementById('lightbox-modal').style.display = "none";
+	}
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var slides = document.getElementsByClassName("lb-slides");
+		if (n > slides.length) { slideIndex = 1; }
+		if (n < 1) { slideIndex = slides.length; }
+		for (var i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		slides[slideIndex - 1].style.display = "block";
+	}
+
+	// Close on background click; arrow keys and Esc while open
+	document.getElementById('lightbox-modal').addEventListener('click', function (e) {
+		if (e.target === this) { closeModal(); }
+	});
+	document.addEventListener('keydown', function (e) {
+		if (document.getElementById('lightbox-modal').style.display !== "block") { return; }
+		if (e.key === "Escape") { closeModal(); }
+		else if (e.key === "ArrowLeft") { plusSlides(-1); }
+		else if (e.key === "ArrowRight") { plusSlides(1); }
+	});
+</script>
 
 </body>
 </html>
